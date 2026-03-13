@@ -1,0 +1,316 @@
+/* --- Global Styles & Variables --- */
+:root {
+  --color-primary-text: #000000;
+  --color-secondary-text: #666666;
+  --color-accent-orange: #EF6C33; /* For 'seconds.' and other accents */
+  --color-dark-bg: #2C2C34; /* For dark cards */
+  --color-light-bg: #FFFFFF;
+  --color-body-bg: #F8F8F8;
+  --color-btn-dark: #000000;
+  --color-btn-border: #CCCCCC;
+
+  --font-family-base: 'Inter', sans-serif;
+  --font-family-heading: 'Poppins', sans-serif;
+
+  --border-radius-card: 12px;
+  --box-shadow-card: 0px 4px 15px rgba(0, 0, 0, 0.1);
+  --spacing-container: 140px; /* Adjust based on desired margin */
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: var(--font-family-base);
+  color: var(--color-primary-text);
+  background-color: var(--color-body-bg);
+  line-height: 1.6;
+  position: relative;
+  overflow-x: hidden;
+}
+
+.container {
+  max-width: 1440px;
+  margin: 0 auto;
+  padding: 0 40px;
+}
+
+/* --- Layout Details --- */
+.background-grid {
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 50vw;
+  height: 50vh;
+  background-image: radial-gradient(#E0E0E0 1px, transparent 1px);
+  background-size: 20px 20px;
+  opacity: 0.5;
+  z-index: -1;
+}
+
+/* --- Header & Nav --- */
+.header {
+  padding: 30px 0;
+  background-color: var(--color-light-bg);
+}
+
+.header__container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.logo {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.logo__text {
+  font-family: var(--font-family-heading);
+  font-size: 24px;
+  font-weight: 700;
+}
+
+.nav__list {
+  display: flex;
+  list-style: none;
+  gap: 30px;
+}
+
+.nav__link {
+  text-decoration: none;
+  color: var(--color-secondary-text);
+  font-size: 14px;
+  font-weight: 500;
+}
+
+.nav__arrow {
+  font-size: 10px;
+  margin-left: 5px;
+}
+
+/* --- Buttons --- */
+.btn {
+  padding: 12px 24px;
+  border-radius: 8px;
+  font-size: 14px;
+  font-weight: 600;
+  cursor: pointer;
+  border: none;
+  transition: background-color 0.2s;
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.btn--primary {
+  background-color: var(--color-btn-dark);
+  color: white;
+}
+
+.btn--secondary {
+  background-color: white;
+  color: var(--color-btn-dark);
+  border: 1px solid var(--color-btn-border);
+}
+
+.btn--with-badge {
+  position: relative;
+}
+
+.btn__badge {
+  font-size: 10px;
+  font-weight: 400;
+  margin-left: 10px;
+  opacity: 0.7;
+}
+
+.btn--icon .btn__icon {
+  width: 16px;
+  height: 16px;
+}
+
+/* --- Hero Section --- */
+.hero {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 80px;
+  padding: 100px 0;
+}
+
+.hero__title {
+  font-family: var(--font-family-heading);
+  font-size: 56px;
+  font-weight: 700;
+  line-height: 1.2;
+  margin-bottom: 24px;
+}
+
+.hero__title--highlight {
+  color: var(--color-accent-orange);
+}
+
+.hero__description {
+  color: var(--color-secondary-text);
+  max-width: 480px;
+  margin-bottom: 40px;
+}
+
+.hero__actions {
+  display: flex;
+  gap: 20px;
+}
+
+/* --- Cards --- */
+.hero__cards {
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+}
+
+.card {
+  background-color: var(--color-light-bg);
+  border-radius: var(--border-radius-card);
+  box-shadow: var(--box-shadow-card);
+  padding: 20px;
+  overflow: hidden;
+}
+
+.card--dark {
+  background-color: var(--color-dark-bg);
+  color: white;
+}
+
+/* Blog Preview Card */
+.card--blog {
+    padding: 10px; /* Adjusting padding around the inner elements */
+}
+
+.card__image {
+  width: 100%;
+  border-radius: 8px;
+  display: block;
+  margin-bottom: 15px;
+}
+
+.card__footer {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.card__avatar {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+}
+
+.card__author-info {
+  display: flex;
+  flex-direction: column;
+}
+
+.card__author-name {
+  font-weight: 600;
+  font-size: 14px;
+}
+
+.card__author-date {
+  color: var(--color-secondary-text);
+  font-size: 12px;
+}
+
+/* Revenue Card */
+.card--revenue {
+    /* Set specific dimensions if needed, otherwise rely on content */
+    width: 280px;
+    align-self: flex-end; /* Matches the staggered layout in design */
+    margin-right: -100px;
+}
+
+.card__header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 15px;
+}
+
+.card__title {
+  font-size: 16px;
+  font-weight: 600;
+}
+
+.card__more-options {
+  font-size: 20px;
+  cursor: pointer;
+  opacity: 0.7;
+}
+
+.card__content {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.card__revenue-metric {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.card__revenue-avatar {
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+}
+
+.card__revenue-value {
+  font-size: 32px;
+  font-weight: 700;
+}
+
+.card__chart {
+    height: 40px;
+}
+
+/* Admin Settings Card */
+.card--settings {
+    width: 280px;
+    align-self: flex-end;
+    margin-right: -100px;
+}
+
+.settings-list {
+  list-style: none;
+}
+
+.settings-list__item {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 10px 0;
+  font-size: 14px;
+  opacity: 0.8;
+  cursor: pointer;
+}
+
+.settings-list__item:not(:last-child) {
+    border-bottom: 1px solid rgba(255,255,255, 0.1);
+}
+
+.settings-list__item img {
+    width: 16px;
+    height: 16px;
+}
+
+/* Placeholder for Footer Graphic Section */
+.footer-graphic {
+    min-height: 200px;
+    margin-top: 50px;
+    background-color: white;
+    border-radius: 20px;
+}
